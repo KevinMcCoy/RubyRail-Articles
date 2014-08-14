@@ -2,10 +2,11 @@
 
 <tt>rake db:create db:migrate</tt>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic Ruby on Rails application called Articles, you can find info on the step that have been taken step taken on the following web site:
 
-Things you may want to cover:
+http://guides.rubyonrails.org/getting_started.html
+
+Currently on step 6
 
 * Ruby version - ruby 2.1.2p95 (2014-05-08 revision 45877) [x86_64-darwin13.0]
 
