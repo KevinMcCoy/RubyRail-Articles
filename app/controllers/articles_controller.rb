@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
+		#  @article object is passed back to the new template when it is rendered.
+		#  Create else render 'new' is done within the same request as the form submission, whereas the redirect_to will tell the browser to issue another request.
 		@article = Article.find(params[:id])
 	end
 
