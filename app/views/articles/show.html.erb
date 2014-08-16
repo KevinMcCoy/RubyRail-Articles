@@ -1,6 +1,6 @@
 <h1>Article Show</h1>
 
-<!--  @article.inspect -->
+<%#=@article.inspect %>
 
 
 <p>
@@ -15,33 +15,40 @@
 
 
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
+<!-- this render views/comments/_comment.html.erb -->
+<%= render @article.comments %>
+
+<!-- above render replace below code -->
+<!-- <%#= @article.comments.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
-    <%= comment.commenter %>
+    <%#= comment.commenter %>
   </p>
  
   <p>
     <strong>Comment:</strong>
-    <%= comment.body %>
+    <%#= comment.body %>
   </p>
-<% end %>
+% end % -->
 
 
 <h2>Add a comment:</h2>
-<%= form_for([@article, @article.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
+<%= render "comments/form" %>
+
+<%#= form_for([@article, @article.comments.build]) do |f| %>
+<!--   <p>
+    <%#= f.label :commenter %><br>
+    <%#= f.text_field :commenter %>
   </p>
   <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%#= f.label :body %><br>
+    <%#= f.text_area :body %>
   </p>
   <p>
-    <%= f.submit %>
-  </p>
-<% end %>
- 
+    <%#= f.submit %>
+  </p> 
+<% #end %>
+-->
+
 <%= link_to 'Back', articles_path %>
 | <%= link_to 'Edit', edit_article_path(@article) %>
