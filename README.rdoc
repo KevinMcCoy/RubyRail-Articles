@@ -17,3 +17,7 @@ Currently on step 6
 * Database creation and initialization - rake db:create db:migrate
 
 * How to run the test suite - http://localhost:3000/articles/
+
+* User name is: root
+
+* Password is: pass

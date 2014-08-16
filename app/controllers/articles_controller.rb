@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
 
+	# Require user/passowrd for everyhting except for index and show.  Since show has some controller function,
+	# another http_basic_authenticate_with is added in comments_controller
+	http_basic_authenticate_with name: "root", password: "pass", except: [:index, :show]
+
 	def index
 		@articles = Article.all
 	end
