@@ -35,4 +35,4 @@ default: &default
 
 development:
   <<: *default
-  database: ruby_application
+  database: ruby_articles
