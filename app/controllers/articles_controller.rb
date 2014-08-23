@@ -9,12 +9,12 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		#  @article object is passed back to the new template when it is rendered.
-		#  Create else render 'new' is done within the same request as the form submission, whereas the redirect_to will tell the browser to issue another request.
 		@article = Article.find(params[:id])
 	end
 
 	def new
+		#  @article object is passed back to the new template when it is rendered.
+		#  Create else render 'new' is done within the same request as the form submission, whereas the redirect_to will tell the browser to issue another request.
 		@article = Article.new
 	end
 
@@ -54,11 +54,11 @@ class ArticlesController < ApplicationController
 		redirect_to articles_path
 	end
 
+	# Using a private method to encapsulate the permissible parameters
+	# is just a good pattern since you'll be able to reuse the same
+	# permit list between create and update. Also, you can specialize
+	# this method with per-user checking of permissible attributes.
 	private
-		def article_params
-			params.require(:article).permit(:title, :text)
-		end
-
 		def article_params
 			params.require(:article).permit(:title, :text)
 		end
